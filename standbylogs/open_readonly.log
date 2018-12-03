@@ -1,0 +1,239 @@
+
+SQL*Plus: Release 11.2.0.4.0 Production on Wed Jun 22 16:33:17 2016
+
+Copyright (c) 1982, 2013, Oracle.  All rights reserved.
+
+Enter user-name: Enter password: 
+
+Connected to:
+Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+
+SQL> 
+Stop DATE and TIME
+-------------------
+06-22-2016 16:33:17
+
+SQL> 
+NAME	  OPEN_MODE	       DATABASE_ROLE
+--------- -------------------- ----------------
+PTCBS	  MOUNTED	       PHYSICAL STANDBY
+
+SQL> 
+Max Applied Log sequence
+------------------------
+		   27301
+
+SQL> alter database open read only
+*
+ERROR at line 1:
+ORA-10458: standby database requires recovery
+ORA-01152: file 1 was not restored from a sufficiently old backup
+ORA-01110: data file 1: '/oradata/ptcbsdr/system01.dbf'
+
+
+SQL> 
+NAME	  OPEN_MODE	       DATABASE_ROLE
+--------- -------------------- ----------------
+PTCBS	  MOUNTED	       PHYSICAL STANDBY
+
+SQL> 
+Opened DATE and TIM
+-------------------
+06-22-2016 16:34:19
+
+SQL> Disconnected from Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+
+SQL*Plus: Release 11.2.0.4.0 Production on Mon Jun 27 14:54:29 2016
+
+Copyright (c) 1982, 2013, Oracle.  All rights reserved.
+
+Enter user-name: Enter password: 
+
+Connected to:
+Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+
+SQL> 
+Stop DATE and TIME
+-------------------
+06-27-2016 14:54:29
+
+SQL> 
+NAME	  OPEN_MODE	       DATABASE_ROLE
+--------- -------------------- ----------------
+PTCBS	  MOUNTED	       PHYSICAL STANDBY
+
+SQL> 
+Max Applied Log sequence
+------------------------
+		   28408
+
+SQL> 
+Database altered.
+
+SQL> 
+NAME	  OPEN_MODE	       DATABASE_ROLE
+--------- -------------------- ----------------
+PTCBS	  READ ONLY	       PHYSICAL STANDBY
+
+SQL> 
+Opened DATE and TIM
+-------------------
+06-27-2016 14:54:35
+
+SQL> Disconnected from Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+
+SQL*Plus: Release 11.2.0.4.0 Production on Mon Jun 27 15:05:19 2016
+
+Copyright (c) 1982, 2013, Oracle.  All rights reserved.
+
+Enter user-name: Enter password: 
+
+Connected to:
+Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+
+SQL> 
+Stop DATE and TIME
+-------------------
+06-27-2016 15:05:19
+
+SQL> 
+NAME	  OPEN_MODE	       DATABASE_ROLE
+--------- -------------------- ----------------
+PTCBS	  MOUNTED	       PHYSICAL STANDBY
+
+SQL> 
+Max Applied Log sequence
+------------------------
+		   28408
+
+SQL> 
+Database altered.
+
+SQL> 
+NAME	  OPEN_MODE	       DATABASE_ROLE
+--------- -------------------- ----------------
+PTCBS	  READ ONLY	       PHYSICAL STANDBY
+
+SQL> 
+Opened DATE and TIM
+-------------------
+06-27-2016 15:05:23
+
+SQL> Disconnected from Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+
+SQL*Plus: Release 11.2.0.4.0 Production on Mon Jun 27 15:41:46 2016
+
+Copyright (c) 1982, 2013, Oracle.  All rights reserved.
+
+Enter user-name: Enter password: 
+
+Connected to:
+Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+
+SQL> 
+Stop DATE and TIME
+-------------------
+06-27-2016 15:41:46
+
+SQL> 
+NAME	  OPEN_MODE	       DATABASE_ROLE
+--------- -------------------- ----------------
+PTCBS	  MOUNTED	       PHYSICAL STANDBY
+
+SQL> 
+Max Applied Log sequence
+------------------------
+		   28414
+
+SQL> 
+Database altered.
+
+SQL> 
+NAME	  OPEN_MODE	       DATABASE_ROLE
+--------- -------------------- ----------------
+PTCBS	  READ ONLY	       PHYSICAL STANDBY
+
+SQL> 
+Opened DATE and TIM
+-------------------
+06-27-2016 15:41:50
+
+SQL> Disconnected from Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+
+SQL*Plus: Release 11.2.0.4.0 Production on Mon Jun 27 15:47:35 2016
+
+Copyright (c) 1982, 2013, Oracle.  All rights reserved.
+
+Enter user-name: Enter password: 
+
+Connected to:
+Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+
+SQL> 
+Stop DATE and TIME
+-------------------
+06-27-2016 15:47:35
+
+SQL> 
+NAME	  OPEN_MODE	       DATABASE_ROLE
+--------- -------------------- ----------------
+PTCBS	  MOUNTED	       PHYSICAL STANDBY
+
+SQL> 
+Max Applied Log sequence
+------------------------
+		   28414
+
+SQL> 
+Database altered.
+
+SQL> 
+NAME	  OPEN_MODE	       DATABASE_ROLE
+--------- -------------------- ----------------
+PTCBS	  READ ONLY	       PHYSICAL STANDBY
+
+SQL> 
+Opened DATE and TIM
+-------------------
+06-27-2016 15:47:38
+
+SQL> Disconnected from Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+
+SQL*Plus: Release 11.2.0.4.0 Production on Mon Jun 27 16:15:57 2016
+
+Copyright (c) 1982, 2013, Oracle.  All rights reserved.
+
+Enter user-name: Enter password: 
+
+Connected to:
+Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+
+SQL> 
+Stop DATE and TIME
+-------------------
+06-27-2016 16:15:57
+
+SQL> 
+NAME	  OPEN_MODE	       DATABASE_ROLE
+--------- -------------------- ----------------
+PTCBS	  MOUNTED	       PHYSICAL STANDBY
+
+SQL> 
+Max Applied Log sequence
+------------------------
+		   28414
+
+SQL> 
+Database altered.
+
+SQL> 
+NAME	  OPEN_MODE	       DATABASE_ROLE
+--------- -------------------- ----------------
+PTCBS	  READ ONLY	       PHYSICAL STANDBY
+
+SQL> 
+Opened DATE and TIM
+-------------------
+06-27-2016 16:16:01
+
+SQL> Disconnected from Oracle Database 11g Release 11.2.0.4.0 - 64bit Production

@@ -1,0 +1,1921 @@
+\n
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+SQL*Plus: Release 11.2.0.4.0 Production on Mon Jun 27 13:24:08 2016
+
+Copyright (c) 1982, 2013, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+
+SQL> SQL> SQL> SQL> 
+APPLY DATE and TIME
+-------------------
+06-27-2016 13:24:08
+
+SQL> SQL> 
+NAME	  OPEN_MODE	       DATABASE_ROLE
+--------- -------------------- ----------------
+PTCBS	  MOUNTED	       PHYSICAL STANDBY
+
+SQL> SQL>   2    3  
+Archive Applied
+--------------------------------------------------------------------
+Archive Applied from node1: 12140
+Archive Applied from node2: 15161
+
+SQL> SQL> ORA-00279: change 114014652 generated at 06/22/2016 10:56:47 needed for thread
+1
+ORA-00289: suggestion : /archive/ptcbsdr/ptcbs_1_12137_884536662.arc
+ORA-00280: change 114014652 for thread 1 is in sequence #12137
+
+
+Specify log: {<RET>=suggested | filename | AUTO | CANCEL}
+ORA-00279: change 114014652 generated at 06/22/2016 10:30:46 needed for thread
+2
+ORA-00289: suggestion : /archive/ptcbsdr/ptcbs_2_15158_884536662.arc
+ORA-00280: change 114014652 for thread 2 is in sequence #15158
+
+
+ORA-00279: change 114015457 generated at 06/22/2016 11:03:33 needed for thread
+1
+ORA-00289: suggestion : /archive/ptcbsdr/ptcbs_1_12138_884536662.arc
+ORA-00280: change 114015457 for thread 1 is in sequence #12138
+ORA-00278: log file '/archive/ptcbsdr/ptcbs_1_12137_884536662.arc' no longer
+needed for this recovery
+
+
+ORA-00279: change 114015461 generated at 06/22/2016 11:03:34 needed for thread
+2
+ORA-00289: suggestion : /archive/ptcbsdr/ptcbs_2_15159_884536662.arc
+ORA-00280: change 114015461 for thread 2 is in sequence #15159
+ORA-00278: log file '/archive/ptcbsdr/ptcbs_2_15158_884536662.arc' no longer
+needed for this recovery
+
+
+ORA-00279: change 114028076 generated at 06/22/2016 12:08:30 needed for thread
+2
+ORA-00289: suggestion : /archive/ptcbsdr/ptcbs_2_15160_884536662.arc
+ORA-00280: change 114028076 for thread 2 is in sequence #15160
+ORA-00278: log file '/archive/ptcbsdr/ptcbs_2_15159_884536662.arc' no longer
+needed for this recovery
+
+
+ORA-00308: cannot open archived log
+'/archive/ptcbsdr/ptcbs_2_15160_884536662.arc'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 3
+
+
+ORA-01547: warning: RECOVER succeeded but OPEN RESETLOGS would get error below
+ORA-01152: file 1 was not restored from a sufficiently old backup
+ORA-01110: data file 1: '/oradata/ptcbsdr/system01.dbf'
+
+
+SQL> SQL>   2    3  
+Archive Applied
+--------------------------------------------------------------------
+Archive Applied from node1: 12140
+Archive Applied from node2: 15161
+
+SQL> SQL> 
+Finished DATE and T
+-------------------
+06-27-2016 13:24:36
+
+SQL> SQL> Disconnected from Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+\n
+\n
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+SQL*Plus: Release 11.2.0.4.0 Production on Mon Jun 27 14:52:00 2016
+
+Copyright (c) 1982, 2013, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+
+SQL> SQL> SQL> SQL> 
+APPLY DATE and TIME
+-------------------
+06-27-2016 14:52:00
+
+SQL> SQL> 
+NAME	  OPEN_MODE	       DATABASE_ROLE
+--------- -------------------- ----------------
+PTCBS	  MOUNTED	       PHYSICAL STANDBY
+
+SQL> SQL>   2    3  
+Archive Applied
+--------------------------------------------------------------------
+Archive Applied from node1: 12666
+Archive Applied from node2: 15736
+
+SQL> SQL> ORA-00279: change 117194215 generated at 06/27/2016 11:49:35 needed for thread
+2
+ORA-00289: suggestion : /archive/ptcbsdr/ptcbs_2_15736_884536662.arc
+ORA-00280: change 117194215 for thread 2 is in sequence #15736
+
+
+Specify log: {<RET>=suggested | filename | AUTO | CANCEL}
+ORA-00279: change 117194215 generated at 06/27/2016 10:30:21 needed for thread
+1
+ORA-00289: suggestion : /archive/ptcbsdr/ptcbs_1_12666_884536662.arc
+ORA-00280: change 117194215 for thread 1 is in sequence #12666
+
+
+ORA-00279: change 117202245 generated at 06/27/2016 12:46:31 needed for thread
+1
+ORA-00289: suggestion : /archive/ptcbsdr/ptcbs_1_12667_884536662.arc
+ORA-00280: change 117202245 for thread 1 is in sequence #12667
+ORA-00278: log file '/archive/ptcbsdr/ptcbs_1_12666_884536662.arc' no longer
+needed for this recovery
+
+
+ORA-00279: change 117207645 generated at 06/27/2016 13:06:49 needed for thread
+2
+ORA-00289: suggestion : /archive/ptcbsdr/ptcbs_2_15737_884536662.arc
+ORA-00280: change 117207645 for thread 2 is in sequence #15737
+ORA-00278: log file '/archive/ptcbsdr/ptcbs_2_15736_884536662.arc' no longer
+needed for this recovery
+
+
+ORA-00279: change 117222193 generated at 06/27/2016 14:46:01 needed for thread
+2
+ORA-00289: suggestion : /archive/ptcbsdr/ptcbs_2_15738_884536662.arc
+ORA-00280: change 117222193 for thread 2 is in sequence #15738
+ORA-00278: log file '/archive/ptcbsdr/ptcbs_2_15737_884536662.arc' no longer
+needed for this recovery
+
+
+ORA-00279: change 117222198 generated at 06/27/2016 14:46:09 needed for thread
+2
+ORA-00289: suggestion : /archive/ptcbsdr/ptcbs_2_15739_884536662.arc
+ORA-00280: change 117222198 for thread 2 is in sequence #15739
+ORA-00278: log file '/archive/ptcbsdr/ptcbs_2_15738_884536662.arc' no longer
+needed for this recovery
+
+
+ORA-00279: change 117222202 generated at 06/27/2016 14:46:10 needed for thread
+1
+ORA-00289: suggestion : /archive/ptcbsdr/ptcbs_1_12668_884536662.arc
+ORA-00280: change 117222202 for thread 1 is in sequence #12668
+ORA-00278: log file '/archive/ptcbsdr/ptcbs_1_12667_884536662.arc' no longer
+needed for this recovery
+
+
+ORA-00279: change 117222299 generated at 06/27/2016 14:47:13 needed for thread
+1
+ORA-00289: suggestion : /archive/ptcbsdr/ptcbs_1_12669_884536662.arc
+ORA-00280: change 117222299 for thread 1 is in sequence #12669
+ORA-00278: log file '/archive/ptcbsdr/ptcbs_1_12668_884536662.arc' no longer
+needed for this recovery
+
+
+ORA-00279: change 117222307 generated at 06/27/2016 14:47:22 needed for thread
+1
+ORA-00289: suggestion : /archive/ptcbsdr/ptcbs_1_12670_884536662.arc
+ORA-00280: change 117222307 for thread 1 is in sequence #12670
+ORA-00278: log file '/archive/ptcbsdr/ptcbs_1_12669_884536662.arc' no longer
+needed for this recovery
+
+
+ORA-00308: cannot open archived log
+'/archive/ptcbsdr/ptcbs_1_12670_884536662.arc'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 3
+
+
+SQL> SQL>   2    3  
+Archive Applied
+--------------------------------------------------------------------
+Archive Applied from node1: 12669
+Archive Applied from node2: 15739
+
+SQL> SQL> 
+Finished DATE and T
+-------------------
+06-27-2016 14:52:42
+
+SQL> SQL> Disconnected from Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+\n
+\n
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+SQL*Plus: Release 11.2.0.4.0 Production on Mon Jun 27 15:05:01 2016
+
+Copyright (c) 1982, 2013, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+
+SQL> SQL> SQL> SQL> 
+APPLY DATE and TIME
+-------------------
+06-27-2016 15:05:01
+
+SQL> SQL> 
+NAME	  OPEN_MODE	       DATABASE_ROLE
+--------- -------------------- ----------------
+PTCBS	  MOUNTED	       PHYSICAL STANDBY
+
+SQL> SQL>   2    3  
+Archive Applied
+--------------------------------------------------------------------
+Archive Applied from node1: 12669
+Archive Applied from node2: 15739
+
+SQL> SQL> ORA-00279: change 117222307 generated at 06/27/2016 14:47:22 needed for thread
+1
+ORA-00289: suggestion : /archive/ptcbsdr/ptcbs_1_12670_884536662.arc
+ORA-00280: change 117222307 for thread 1 is in sequence #12670
+
+
+Specify log: {<RET>=suggested | filename | AUTO | CANCEL}
+ORA-00308: cannot open archived log
+'/archive/ptcbsdr/ptcbs_1_12670_884536662.arc'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 3
+
+
+ORA-00308: cannot open archived log
+'/archive/ptcbsdr/ptcbs_1_12670_884536662.arc'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 3
+
+
+SQL> SQL>   2    3  
+Archive Applied
+--------------------------------------------------------------------
+Archive Applied from node1: 12669
+Archive Applied from node2: 15739
+
+SQL> SQL> 
+Finished DATE and T
+-------------------
+06-27-2016 15:05:03
+
+SQL> SQL> Disconnected from Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+\n
+\n
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+SQL*Plus: Release 11.2.0.4.0 Production on Mon Jun 27 15:10:01 2016
+
+Copyright (c) 1982, 2013, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+
+SQL> SQL> SQL> SQL> 
+APPLY DATE and TIME
+-------------------
+06-27-2016 15:10:01
+
+SQL> SQL> 
+NAME	  OPEN_MODE	       DATABASE_ROLE
+--------- -------------------- ----------------
+PTCBS	  MOUNTED	       PHYSICAL STANDBY
+
+SQL> SQL>   2    3  
+Archive Applied
+--------------------------------------------------------------------
+Archive Applied from node1: 12669
+Archive Applied from node2: 15739
+
+SQL> SQL> ORA-00279: change 117222307 generated at 06/27/2016 14:47:22 needed for thread
+1
+ORA-00289: suggestion : /archive/ptcbsdr/ptcbs_1_12670_884536662.arc
+ORA-00280: change 117222307 for thread 1 is in sequence #12670
+
+
+Specify log: {<RET>=suggested | filename | AUTO | CANCEL}
+ORA-00308: cannot open archived log
+'/archive/ptcbsdr/ptcbs_1_12670_884536662.arc'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 3
+
+
+ORA-00308: cannot open archived log
+'/archive/ptcbsdr/ptcbs_1_12670_884536662.arc'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 3
+
+
+SQL> SQL>   2    3  
+Archive Applied
+--------------------------------------------------------------------
+Archive Applied from node1: 12669
+Archive Applied from node2: 15739
+
+SQL> SQL> 
+Finished DATE and T
+-------------------
+06-27-2016 15:10:03
+
+SQL> SQL> Disconnected from Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+\n
+\n
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+SQL*Plus: Release 11.2.0.4.0 Production on Mon Jun 27 15:15:01 2016
+
+Copyright (c) 1982, 2013, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+
+SQL> SQL> SQL> SQL> 
+APPLY DATE and TIME
+-------------------
+06-27-2016 15:15:01
+
+SQL> SQL> 
+NAME	  OPEN_MODE	       DATABASE_ROLE
+--------- -------------------- ----------------
+PTCBS	  MOUNTED	       PHYSICAL STANDBY
+
+SQL> SQL>   2    3  
+Archive Applied
+--------------------------------------------------------------------
+Archive Applied from node1: 12669
+Archive Applied from node2: 15739
+
+SQL> SQL> ORA-00279: change 117222307 generated at 06/27/2016 14:47:22 needed for thread
+1
+ORA-00289: suggestion : /archive/ptcbsdr/ptcbs_1_12670_884536662.arc
+ORA-00280: change 117222307 for thread 1 is in sequence #12670
+
+
+Specify log: {<RET>=suggested | filename | AUTO | CANCEL}
+ORA-00308: cannot open archived log
+'/archive/ptcbsdr/ptcbs_1_12670_884536662.arc'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 3
+
+
+ORA-00308: cannot open archived log
+'/archive/ptcbsdr/ptcbs_1_12670_884536662.arc'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 3
+
+
+SQL> SQL>   2    3  
+Archive Applied
+--------------------------------------------------------------------
+Archive Applied from node1: 12669
+Archive Applied from node2: 15739
+
+SQL> SQL> 
+Finished DATE and T
+-------------------
+06-27-2016 15:15:03
+
+SQL> SQL> Disconnected from Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+\n
+\n
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+SQL*Plus: Release 11.2.0.4.0 Production on Mon Jun 27 15:20:01 2016
+
+Copyright (c) 1982, 2013, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+
+SQL> SQL> SQL> SQL> 
+APPLY DATE and TIME
+-------------------
+06-27-2016 15:20:01
+
+SQL> SQL> 
+NAME	  OPEN_MODE	       DATABASE_ROLE
+--------- -------------------- ----------------
+PTCBS	  MOUNTED	       PHYSICAL STANDBY
+
+SQL> SQL>   2    3  
+Archive Applied
+--------------------------------------------------------------------
+Archive Applied from node1: 12669
+Archive Applied from node2: 15739
+
+SQL> SQL> ORA-00279: change 117222307 generated at 06/27/2016 14:47:22 needed for thread
+1
+ORA-00289: suggestion : /archive/ptcbsdr/ptcbs_1_12670_884536662.arc
+ORA-00280: change 117222307 for thread 1 is in sequence #12670
+
+
+Specify log: {<RET>=suggested | filename | AUTO | CANCEL}
+ORA-00279: change 117222307 generated at 06/27/2016 14:46:09 needed for thread
+2
+ORA-00289: suggestion : /archive/ptcbsdr/ptcbs_2_15739_884536662.arc
+ORA-00280: change 117222307 for thread 2 is in sequence #15739
+
+
+ORA-00279: change 117222311 generated at 06/27/2016 14:47:24 needed for thread
+2
+ORA-00289: suggestion : /archive/ptcbsdr/ptcbs_2_15740_884536662.arc
+ORA-00280: change 117222311 for thread 2 is in sequence #15740
+ORA-00278: log file '/archive/ptcbsdr/ptcbs_2_15739_884536662.arc' no longer
+needed for this recovery
+
+
+ORA-00279: change 117226353 generated at 06/27/2016 15:10:53 needed for thread
+1
+ORA-00289: suggestion : /archive/ptcbsdr/ptcbs_1_12671_884536662.arc
+ORA-00280: change 117226353 for thread 1 is in sequence #12671
+ORA-00278: log file '/archive/ptcbsdr/ptcbs_1_12670_884536662.arc' no longer
+needed for this recovery
+
+
+ORA-00279: change 117226433 generated at 06/27/2016 15:11:20 needed for thread
+1
+ORA-00289: suggestion : /archive/ptcbsdr/ptcbs_1_12672_884536662.arc
+ORA-00280: change 117226433 for thread 1 is in sequence #12672
+ORA-00278: log file '/archive/ptcbsdr/ptcbs_1_12671_884536662.arc' no longer
+needed for this recovery
+
+
+ORA-00308: cannot open archived log
+'/archive/ptcbsdr/ptcbs_1_12672_884536662.arc'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 3
+
+
+SQL> SQL>   2    3  
+Archive Applied
+--------------------------------------------------------------------
+Archive Applied from node1: 12671
+Archive Applied from node2: 15740
+
+SQL> SQL> 
+Finished DATE and T
+-------------------
+06-27-2016 15:20:12
+
+SQL> SQL> Disconnected from Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+\n
+\n
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+SQL*Plus: Release 11.2.0.4.0 Production on Mon Jun 27 15:25:01 2016
+
+Copyright (c) 1982, 2013, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+
+SQL> SQL> SQL> SQL> 
+APPLY DATE and TIME
+-------------------
+06-27-2016 15:25:01
+
+SQL> SQL> 
+NAME	  OPEN_MODE	       DATABASE_ROLE
+--------- -------------------- ----------------
+PTCBS	  MOUNTED	       PHYSICAL STANDBY
+
+SQL> SQL>   2    3  
+Archive Applied
+--------------------------------------------------------------------
+Archive Applied from node1: 12671
+Archive Applied from node2: 15740
+
+SQL> SQL> ORA-00279: change 117226433 generated at 06/27/2016 15:11:20 needed for thread
+1
+ORA-00289: suggestion : /archive/ptcbsdr/ptcbs_1_12672_884536662.arc
+ORA-00280: change 117226433 for thread 1 is in sequence #12672
+
+
+Specify log: {<RET>=suggested | filename | AUTO | CANCEL}
+ORA-00308: cannot open archived log
+'/archive/ptcbsdr/ptcbs_1_12672_884536662.arc'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 3
+
+
+ORA-00308: cannot open archived log
+'/archive/ptcbsdr/ptcbs_1_12672_884536662.arc'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 3
+
+
+SQL> SQL>   2    3  
+Archive Applied
+--------------------------------------------------------------------
+Archive Applied from node1: 12671
+Archive Applied from node2: 15740
+
+SQL> SQL> 
+Finished DATE and T
+-------------------
+06-27-2016 15:25:02
+
+SQL> SQL> Disconnected from Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+\n
+\n
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+SQL*Plus: Release 11.2.0.4.0 Production on Mon Jun 27 15:30:02 2016
+
+Copyright (c) 1982, 2013, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+
+SQL> SQL> SQL> SQL> 
+APPLY DATE and TIME
+-------------------
+06-27-2016 15:30:02
+
+SQL> SQL> 
+NAME	  OPEN_MODE	       DATABASE_ROLE
+--------- -------------------- ----------------
+PTCBS	  MOUNTED	       PHYSICAL STANDBY
+
+SQL> SQL>   2    3  
+Archive Applied
+--------------------------------------------------------------------
+Archive Applied from node1: 12671
+Archive Applied from node2: 15740
+
+SQL> SQL> ORA-00279: change 117226433 generated at 06/27/2016 15:11:20 needed for thread
+1
+ORA-00289: suggestion : /archive/ptcbsdr/ptcbs_1_12672_884536662.arc
+ORA-00280: change 117226433 for thread 1 is in sequence #12672
+
+
+Specify log: {<RET>=suggested | filename | AUTO | CANCEL}
+ORA-00279: change 117226433 generated at 06/27/2016 14:47:24 needed for thread
+2
+ORA-00289: suggestion : /archive/ptcbsdr/ptcbs_2_15740_884536662.arc
+ORA-00280: change 117226433 for thread 2 is in sequence #15740
+
+
+ORA-00279: change 117226683 generated at 06/27/2016 15:12:36 needed for thread
+2
+ORA-00289: suggestion : /archive/ptcbsdr/ptcbs_2_15741_884536662.arc
+ORA-00280: change 117226683 for thread 2 is in sequence #15741
+ORA-00278: log file '/archive/ptcbsdr/ptcbs_2_15740_884536662.arc' no longer
+needed for this recovery
+
+
+ORA-00279: change 117226686 generated at 06/27/2016 15:12:39 needed for thread
+2
+ORA-00289: suggestion : /archive/ptcbsdr/ptcbs_2_15742_884536662.arc
+ORA-00280: change 117226686 for thread 2 is in sequence #15742
+ORA-00278: log file '/archive/ptcbsdr/ptcbs_2_15741_884536662.arc' no longer
+needed for this recovery
+
+
+ORA-00279: change 117227510 generated at 06/27/2016 15:20:32 needed for thread
+1
+ORA-00289: suggestion : /archive/ptcbsdr/ptcbs_1_12673_884536662.arc
+ORA-00280: change 117227510 for thread 1 is in sequence #12673
+ORA-00278: log file '/archive/ptcbsdr/ptcbs_1_12672_884536662.arc' no longer
+needed for this recovery
+
+
+ORA-00308: cannot open archived log
+'/archive/ptcbsdr/ptcbs_1_12673_884536662.arc'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 3
+
+
+SQL> SQL>   2    3  
+Archive Applied
+--------------------------------------------------------------------
+Archive Applied from node1: 12672
+Archive Applied from node2: 15742
+
+SQL> SQL> 
+Finished DATE and T
+-------------------
+06-27-2016 15:30:08
+
+SQL> SQL> Disconnected from Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+\n
+\n
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+SQL*Plus: Release 11.2.0.4.0 Production on Mon Jun 27 15:35:01 2016
+
+Copyright (c) 1982, 2013, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+
+SQL> SQL> SQL> SQL> 
+APPLY DATE and TIME
+-------------------
+06-27-2016 15:35:01
+
+SQL> SQL> 
+NAME	  OPEN_MODE	       DATABASE_ROLE
+--------- -------------------- ----------------
+PTCBS	  MOUNTED	       PHYSICAL STANDBY
+
+SQL> SQL>   2    3  
+Archive Applied
+--------------------------------------------------------------------
+Archive Applied from node1: 12672
+Archive Applied from node2: 15742
+
+SQL> SQL> ORA-00279: change 117227510 generated at 06/27/2016 15:20:32 needed for thread
+1
+ORA-00289: suggestion : /archive/ptcbsdr/ptcbs_1_12673_884536662.arc
+ORA-00280: change 117227510 for thread 1 is in sequence #12673
+
+
+Specify log: {<RET>=suggested | filename | AUTO | CANCEL}
+ORA-00308: cannot open archived log
+'/archive/ptcbsdr/ptcbs_1_12673_884536662.arc'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 3
+
+
+ORA-00308: cannot open archived log
+'/archive/ptcbsdr/ptcbs_1_12673_884536662.arc'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 3
+
+
+SQL> SQL>   2    3  
+Archive Applied
+--------------------------------------------------------------------
+Archive Applied from node1: 12672
+Archive Applied from node2: 15742
+
+SQL> SQL> 
+Finished DATE and T
+-------------------
+06-27-2016 15:35:03
+
+SQL> SQL> Disconnected from Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+\n
+\n
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+SQL*Plus: Release 11.2.0.4.0 Production on Mon Jun 27 15:40:01 2016
+
+Copyright (c) 1982, 2013, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+
+SQL> SQL> SQL> SQL> 
+APPLY DATE and TIME
+-------------------
+06-27-2016 15:40:01
+
+SQL> SQL> 
+NAME	  OPEN_MODE	       DATABASE_ROLE
+--------- -------------------- ----------------
+PTCBS	  MOUNTED	       PHYSICAL STANDBY
+
+SQL> SQL>   2    3  
+Archive Applied
+--------------------------------------------------------------------
+Archive Applied from node1: 12672
+Archive Applied from node2: 15742
+
+SQL> SQL> ORA-00279: change 117227510 generated at 06/27/2016 15:20:32 needed for thread
+1
+ORA-00289: suggestion : /archive/ptcbsdr/ptcbs_1_12673_884536662.arc
+ORA-00280: change 117227510 for thread 1 is in sequence #12673
+
+
+Specify log: {<RET>=suggested | filename | AUTO | CANCEL}
+ORA-00308: cannot open archived log
+'/archive/ptcbsdr/ptcbs_1_12673_884536662.arc'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 3
+
+
+ORA-00308: cannot open archived log
+'/archive/ptcbsdr/ptcbs_1_12673_884536662.arc'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 3
+
+
+SQL> SQL>   2    3  
+Archive Applied
+--------------------------------------------------------------------
+Archive Applied from node1: 12672
+Archive Applied from node2: 15742
+
+SQL> SQL> 
+Finished DATE and T
+-------------------
+06-27-2016 15:40:02
+
+SQL> SQL> Disconnected from Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+\n
+\n
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+SQL*Plus: Release 11.2.0.4.0 Production on Mon Jun 27 15:45:01 2016
+
+Copyright (c) 1982, 2013, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+
+SQL> SQL> SQL> SQL> 
+APPLY DATE and TIME
+-------------------
+06-27-2016 15:45:01
+
+SQL> SQL> 
+NAME	  OPEN_MODE	       DATABASE_ROLE
+--------- -------------------- ----------------
+PTCBS	  MOUNTED	       PHYSICAL STANDBY
+
+SQL> SQL>   2    3  
+Archive Applied
+--------------------------------------------------------------------
+Archive Applied from node1: 12672
+Archive Applied from node2: 15742
+
+SQL> SQL> ORA-00279: change 117227510 generated at 06/27/2016 15:20:32 needed for thread
+1
+ORA-00289: suggestion : /archive/ptcbsdr/ptcbs_1_12673_884536662.arc
+ORA-00280: change 117227510 for thread 1 is in sequence #12673
+
+
+Specify log: {<RET>=suggested | filename | AUTO | CANCEL}
+ORA-00308: cannot open archived log
+'/archive/ptcbsdr/ptcbs_1_12673_884536662.arc'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 3
+
+
+ORA-00308: cannot open archived log
+'/archive/ptcbsdr/ptcbs_1_12673_884536662.arc'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 3
+
+
+SQL> SQL>   2    3  
+Archive Applied
+--------------------------------------------------------------------
+Archive Applied from node1: 12672
+Archive Applied from node2: 15742
+
+SQL> SQL> 
+Finished DATE and T
+-------------------
+06-27-2016 15:45:03
+
+SQL> SQL> Disconnected from Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+\n
+\n
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+SQL*Plus: Release 11.2.0.4.0 Production on Mon Jun 27 15:55:01 2016
+
+Copyright (c) 1982, 2013, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+
+SQL> SQL> SQL> SQL> 
+APPLY DATE and TIME
+-------------------
+06-27-2016 15:55:01
+
+SQL> SQL> 
+NAME	  OPEN_MODE	       DATABASE_ROLE
+--------- -------------------- ----------------
+PTCBS	  MOUNTED	       PHYSICAL STANDBY
+
+SQL> SQL>   2    3  
+Archive Applied
+--------------------------------------------------------------------
+Archive Applied from node1: 12672
+Archive Applied from node2: 15742
+
+SQL> SQL> ORA-00279: change 117227510 generated at 06/27/2016 15:20:32 needed for thread
+1
+ORA-00289: suggestion : /archive/ptcbsdr/ptcbs_1_12673_884536662.arc
+ORA-00280: change 117227510 for thread 1 is in sequence #12673
+
+
+Specify log: {<RET>=suggested | filename | AUTO | CANCEL}
+ORA-00308: cannot open archived log
+'/archive/ptcbsdr/ptcbs_1_12673_884536662.arc'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 3
+
+
+ORA-00308: cannot open archived log
+'/archive/ptcbsdr/ptcbs_1_12673_884536662.arc'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 3
+
+
+SQL> SQL>   2    3  
+Archive Applied
+--------------------------------------------------------------------
+Archive Applied from node1: 12672
+Archive Applied from node2: 15742
+
+SQL> SQL> 
+Finished DATE and T
+-------------------
+06-27-2016 15:55:03
+
+SQL> SQL> Disconnected from Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+\n
+\n
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+SQL*Plus: Release 11.2.0.4.0 Production on Mon Jun 27 16:00:01 2016
+
+Copyright (c) 1982, 2013, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+
+SQL> SQL> SQL> SQL> 
+APPLY DATE and TIME
+-------------------
+06-27-2016 16:00:01
+
+SQL> SQL> 
+NAME	  OPEN_MODE	       DATABASE_ROLE
+--------- -------------------- ----------------
+PTCBS	  MOUNTED	       PHYSICAL STANDBY
+
+SQL> SQL>   2    3  
+Archive Applied
+--------------------------------------------------------------------
+Archive Applied from node1: 12672
+Archive Applied from node2: 15742
+
+SQL> SQL> ORA-00279: change 117227510 generated at 06/27/2016 15:20:32 needed for thread
+1
+ORA-00289: suggestion : /archive/ptcbsdr/ptcbs_1_12673_884536662.arc
+ORA-00280: change 117227510 for thread 1 is in sequence #12673
+
+
+Specify log: {<RET>=suggested | filename | AUTO | CANCEL}
+ORA-00308: cannot open archived log
+'/archive/ptcbsdr/ptcbs_1_12673_884536662.arc'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 3
+
+
+ORA-00308: cannot open archived log
+'/archive/ptcbsdr/ptcbs_1_12673_884536662.arc'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 3
+
+
+SQL> SQL>   2    3  
+Archive Applied
+--------------------------------------------------------------------
+Archive Applied from node1: 12672
+Archive Applied from node2: 15742
+
+SQL> SQL> 
+Finished DATE and T
+-------------------
+06-27-2016 16:00:03
+
+SQL> SQL> Disconnected from Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+\n
+\n
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+SQL*Plus: Release 11.2.0.4.0 Production on Mon Jun 27 16:05:01 2016
+
+Copyright (c) 1982, 2013, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+
+SQL> SQL> SQL> SQL> 
+APPLY DATE and TIME
+-------------------
+06-27-2016 16:05:01
+
+SQL> SQL> 
+NAME	  OPEN_MODE	       DATABASE_ROLE
+--------- -------------------- ----------------
+PTCBS	  MOUNTED	       PHYSICAL STANDBY
+
+SQL> SQL>   2    3  
+Archive Applied
+--------------------------------------------------------------------
+Archive Applied from node1: 12672
+Archive Applied from node2: 15742
+
+SQL> SQL> ORA-00279: change 117227510 generated at 06/27/2016 15:20:32 needed for thread
+1
+ORA-00289: suggestion : /archive/ptcbsdr/ptcbs_1_12673_884536662.arc
+ORA-00280: change 117227510 for thread 1 is in sequence #12673
+
+
+Specify log: {<RET>=suggested | filename | AUTO | CANCEL}
+ORA-00308: cannot open archived log
+'/archive/ptcbsdr/ptcbs_1_12673_884536662.arc'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 3
+
+
+ORA-00308: cannot open archived log
+'/archive/ptcbsdr/ptcbs_1_12673_884536662.arc'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 3
+
+
+SQL> SQL>   2    3  
+Archive Applied
+--------------------------------------------------------------------
+Archive Applied from node1: 12672
+Archive Applied from node2: 15742
+
+SQL> SQL> 
+Finished DATE and T
+-------------------
+06-27-2016 16:05:03
+
+SQL> SQL> Disconnected from Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+\n
+\n
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+SQL*Plus: Release 11.2.0.4.0 Production on Mon Jun 27 16:10:01 2016
+
+Copyright (c) 1982, 2013, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+
+SQL> SQL> SQL> SQL> 
+APPLY DATE and TIME
+-------------------
+06-27-2016 16:10:01
+
+SQL> SQL> 
+NAME	  OPEN_MODE	       DATABASE_ROLE
+--------- -------------------- ----------------
+PTCBS	  MOUNTED	       PHYSICAL STANDBY
+
+SQL> SQL>   2    3  
+Archive Applied
+--------------------------------------------------------------------
+Archive Applied from node1: 12672
+Archive Applied from node2: 15742
+
+SQL> SQL> ORA-00279: change 117227510 generated at 06/27/2016 15:20:32 needed for thread
+1
+ORA-00289: suggestion : /archive/ptcbsdr/ptcbs_1_12673_884536662.arc
+ORA-00280: change 117227510 for thread 1 is in sequence #12673
+
+
+Specify log: {<RET>=suggested | filename | AUTO | CANCEL}
+ORA-00308: cannot open archived log
+'/archive/ptcbsdr/ptcbs_1_12673_884536662.arc'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 3
+
+
+ORA-00308: cannot open archived log
+'/archive/ptcbsdr/ptcbs_1_12673_884536662.arc'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 3
+
+
+SQL> SQL>   2    3  
+Archive Applied
+--------------------------------------------------------------------
+Archive Applied from node1: 12672
+Archive Applied from node2: 15742
+
+SQL> SQL> 
+Finished DATE and T
+-------------------
+06-27-2016 16:10:02
+
+SQL> SQL> Disconnected from Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+\n
+\n
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+SQL*Plus: Release 11.2.0.4.0 Production on Mon Jun 27 16:15:01 2016
+
+Copyright (c) 1982, 2013, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+
+SQL> SQL> SQL> SQL> 
+APPLY DATE and TIME
+-------------------
+06-27-2016 16:15:01
+
+SQL> SQL> 
+NAME	  OPEN_MODE	       DATABASE_ROLE
+--------- -------------------- ----------------
+PTCBS	  MOUNTED	       PHYSICAL STANDBY
+
+SQL> SQL>   2    3  
+Archive Applied
+--------------------------------------------------------------------
+Archive Applied from node1: 12672
+Archive Applied from node2: 15742
+
+SQL> SQL> ORA-00279: change 117227510 generated at 06/27/2016 15:20:32 needed for thread
+1
+ORA-00289: suggestion : /archive/ptcbsdr/ptcbs_1_12673_884536662.arc
+ORA-00280: change 117227510 for thread 1 is in sequence #12673
+
+
+Specify log: {<RET>=suggested | filename | AUTO | CANCEL}
+ORA-00308: cannot open archived log
+'/archive/ptcbsdr/ptcbs_1_12673_884536662.arc'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 3
+
+
+ORA-00308: cannot open archived log
+'/archive/ptcbsdr/ptcbs_1_12673_884536662.arc'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 3
+
+
+SQL> SQL>   2    3  
+Archive Applied
+--------------------------------------------------------------------
+Archive Applied from node1: 12672
+Archive Applied from node2: 15742
+
+SQL> SQL> 
+Finished DATE and T
+-------------------
+06-27-2016 16:15:03
+
+SQL> SQL> Disconnected from Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+\n
+\n
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+SQL*Plus: Release 11.2.0.4.0 Production on Mon Jun 27 16:20:01 2016
+
+Copyright (c) 1982, 2013, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+
+SQL> SQL> SQL> SQL> 
+APPLY DATE and TIME
+-------------------
+06-27-2016 16:20:01
+
+SQL> SQL> 
+NAME	  OPEN_MODE	       DATABASE_ROLE
+--------- -------------------- ----------------
+PTCBS	  MOUNTED	       PHYSICAL STANDBY
+
+SQL> SQL>   2    3  
+Archive Applied
+--------------------------------------------------------------------
+Archive Applied from node1: 12672
+Archive Applied from node2: 15742
+
+SQL> SQL> ORA-00279: change 117227510 generated at 06/27/2016 15:20:32 needed for thread
+1
+ORA-00289: suggestion : /archive/ptcbsdr/ptcbs_1_12673_884536662.arc
+ORA-00280: change 117227510 for thread 1 is in sequence #12673
+
+
+Specify log: {<RET>=suggested | filename | AUTO | CANCEL}
+ORA-00308: cannot open archived log
+'/archive/ptcbsdr/ptcbs_1_12673_884536662.arc'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 3
+
+
+ORA-00308: cannot open archived log
+'/archive/ptcbsdr/ptcbs_1_12673_884536662.arc'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 3
+
+
+SQL> SQL>   2    3  
+Archive Applied
+--------------------------------------------------------------------
+Archive Applied from node1: 12672
+Archive Applied from node2: 15742
+
+SQL> SQL> 
+Finished DATE and T
+-------------------
+06-27-2016 16:20:03
+
+SQL> SQL> Disconnected from Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+\n
+\n
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+SQL*Plus: Release 11.2.0.4.0 Production on Mon Jun 27 16:25:01 2016
+
+Copyright (c) 1982, 2013, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+
+SQL> SQL> SQL> SQL> 
+APPLY DATE and TIME
+-------------------
+06-27-2016 16:25:01
+
+SQL> SQL> 
+NAME	  OPEN_MODE	       DATABASE_ROLE
+--------- -------------------- ----------------
+PTCBS	  MOUNTED	       PHYSICAL STANDBY
+
+SQL> SQL>   2    3  
+Archive Applied
+--------------------------------------------------------------------
+Archive Applied from node1: 12672
+Archive Applied from node2: 15742
+
+SQL> SQL> ORA-00279: change 117227510 generated at 06/27/2016 15:20:32 needed for thread
+1
+ORA-00289: suggestion : /archive/ptcbsdr/ptcbs_1_12673_884536662.arc
+ORA-00280: change 117227510 for thread 1 is in sequence #12673
+
+
+Specify log: {<RET>=suggested | filename | AUTO | CANCEL}
+ORA-00308: cannot open archived log
+'/archive/ptcbsdr/ptcbs_1_12673_884536662.arc'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 3
+
+
+ORA-00308: cannot open archived log
+'/archive/ptcbsdr/ptcbs_1_12673_884536662.arc'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 3
+
+
+SQL> SQL>   2    3  
+Archive Applied
+--------------------------------------------------------------------
+Archive Applied from node1: 12672
+Archive Applied from node2: 15742
+
+SQL> SQL> 
+Finished DATE and T
+-------------------
+06-27-2016 16:25:03
+
+SQL> SQL> Disconnected from Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+\n
+\n
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+SQL*Plus: Release 11.2.0.4.0 Production on Mon Jun 27 16:30:01 2016
+
+Copyright (c) 1982, 2013, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+
+SQL> SQL> SQL> SQL> 
+APPLY DATE and TIME
+-------------------
+06-27-2016 16:30:01
+
+SQL> SQL> 
+NAME	  OPEN_MODE	       DATABASE_ROLE
+--------- -------------------- ----------------
+PTCBS	  MOUNTED	       PHYSICAL STANDBY
+
+SQL> SQL>   2    3  
+Archive Applied
+--------------------------------------------------------------------
+Archive Applied from node1: 12672
+Archive Applied from node2: 15742
+
+SQL> SQL> ORA-00279: change 117227510 generated at 06/27/2016 15:20:32 needed for thread
+1
+ORA-00289: suggestion : /archive/ptcbsdr/ptcbs_1_12673_884536662.arc
+ORA-00280: change 117227510 for thread 1 is in sequence #12673
+
+
+Specify log: {<RET>=suggested | filename | AUTO | CANCEL}
+ORA-00308: cannot open archived log
+'/archive/ptcbsdr/ptcbs_1_12673_884536662.arc'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 3
+
+
+ORA-00308: cannot open archived log
+'/archive/ptcbsdr/ptcbs_1_12673_884536662.arc'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 3
+
+
+SQL> SQL>   2    3  
+Archive Applied
+--------------------------------------------------------------------
+Archive Applied from node1: 12672
+Archive Applied from node2: 15742
+
+SQL> SQL> 
+Finished DATE and T
+-------------------
+06-27-2016 16:30:02
+
+SQL> SQL> Disconnected from Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+\n
+\n
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+SQL*Plus: Release 11.2.0.4.0 Production on Mon Jun 27 16:35:01 2016
+
+Copyright (c) 1982, 2013, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+
+SQL> SQL> SQL> SQL> 
+APPLY DATE and TIME
+-------------------
+06-27-2016 16:35:01
+
+SQL> SQL> 
+NAME	  OPEN_MODE	       DATABASE_ROLE
+--------- -------------------- ----------------
+PTCBS	  MOUNTED	       PHYSICAL STANDBY
+
+SQL> SQL>   2    3  
+Archive Applied
+--------------------------------------------------------------------
+Archive Applied from node1: 12672
+Archive Applied from node2: 15742
+
+SQL> SQL> ORA-00279: change 117227510 generated at 06/27/2016 15:20:32 needed for thread
+1
+ORA-00289: suggestion : /archive/ptcbsdr/ptcbs_1_12673_884536662.arc
+ORA-00280: change 117227510 for thread 1 is in sequence #12673
+
+
+Specify log: {<RET>=suggested | filename | AUTO | CANCEL}
+ORA-00308: cannot open archived log
+'/archive/ptcbsdr/ptcbs_1_12673_884536662.arc'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 3
+
+
+ORA-00308: cannot open archived log
+'/archive/ptcbsdr/ptcbs_1_12673_884536662.arc'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 3
+
+
+SQL> SQL>   2    3  
+Archive Applied
+--------------------------------------------------------------------
+Archive Applied from node1: 12672
+Archive Applied from node2: 15742
+
+SQL> SQL> 
+Finished DATE and T
+-------------------
+06-27-2016 16:35:03
+
+SQL> SQL> Disconnected from Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+\n
+\n
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+SQL*Plus: Release 11.2.0.4.0 Production on Mon Jun 27 16:40:01 2016
+
+Copyright (c) 1982, 2013, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+
+SQL> SQL> SQL> SQL> 
+APPLY DATE and TIME
+-------------------
+06-27-2016 16:40:01
+
+SQL> SQL> 
+NAME	  OPEN_MODE	       DATABASE_ROLE
+--------- -------------------- ----------------
+PTCBS	  MOUNTED	       PHYSICAL STANDBY
+
+SQL> SQL>   2    3  
+Archive Applied
+--------------------------------------------------------------------
+Archive Applied from node1: 12672
+Archive Applied from node2: 15742
+
+SQL> SQL> ORA-00279: change 117227510 generated at 06/27/2016 15:20:32 needed for thread
+1
+ORA-00289: suggestion : /archive/ptcbsdr/ptcbs_1_12673_884536662.arc
+ORA-00280: change 117227510 for thread 1 is in sequence #12673
+
+
+Specify log: {<RET>=suggested | filename | AUTO | CANCEL}
+ORA-00308: cannot open archived log
+'/archive/ptcbsdr/ptcbs_1_12673_884536662.arc'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 3
+
+
+ORA-00308: cannot open archived log
+'/archive/ptcbsdr/ptcbs_1_12673_884536662.arc'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 3
+
+
+SQL> SQL>   2    3  
+Archive Applied
+--------------------------------------------------------------------
+Archive Applied from node1: 12672
+Archive Applied from node2: 15742
+
+SQL> SQL> 
+Finished DATE and T
+-------------------
+06-27-2016 16:40:03
+
+SQL> SQL> Disconnected from Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+\n
+\n
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+SQL*Plus: Release 11.2.0.4.0 Production on Mon Jun 27 16:45:01 2016
+
+Copyright (c) 1982, 2013, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+
+SQL> SQL> SQL> SQL> 
+APPLY DATE and TIME
+-------------------
+06-27-2016 16:45:01
+
+SQL> SQL> 
+NAME	  OPEN_MODE	       DATABASE_ROLE
+--------- -------------------- ----------------
+PTCBS	  MOUNTED	       PHYSICAL STANDBY
+
+SQL> SQL>   2    3  
+Archive Applied
+--------------------------------------------------------------------
+Archive Applied from node1: 12672
+Archive Applied from node2: 15742
+
+SQL> SQL> ORA-00279: change 117227510 generated at 06/27/2016 15:20:32 needed for thread
+1
+ORA-00289: suggestion : /archive/ptcbsdr/ptcbs_1_12673_884536662.arc
+ORA-00280: change 117227510 for thread 1 is in sequence #12673
+
+
+Specify log: {<RET>=suggested | filename | AUTO | CANCEL}
+ORA-00308: cannot open archived log
+'/archive/ptcbsdr/ptcbs_1_12673_884536662.arc'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 3
+
+
+ORA-00308: cannot open archived log
+'/archive/ptcbsdr/ptcbs_1_12673_884536662.arc'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 3
+
+
+SQL> SQL>   2    3  
+Archive Applied
+--------------------------------------------------------------------
+Archive Applied from node1: 12672
+Archive Applied from node2: 15742
+
+SQL> SQL> 
+Finished DATE and T
+-------------------
+06-27-2016 16:45:02
+
+SQL> SQL> Disconnected from Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+\n
+\n
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+SQL*Plus: Release 11.2.0.4.0 Production on Mon Jun 27 16:50:01 2016
+
+Copyright (c) 1982, 2013, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+
+SQL> SQL> SQL> SQL> 
+APPLY DATE and TIME
+-------------------
+06-27-2016 16:50:01
+
+SQL> SQL> 
+NAME	  OPEN_MODE	       DATABASE_ROLE
+--------- -------------------- ----------------
+PTCBS	  MOUNTED	       PHYSICAL STANDBY
+
+SQL> SQL>   2    3  
+Archive Applied
+--------------------------------------------------------------------
+Archive Applied from node1: 12672
+Archive Applied from node2: 15742
+
+SQL> SQL> ORA-00279: change 117227510 generated at 06/27/2016 15:20:32 needed for thread
+1
+ORA-00289: suggestion : /archive/ptcbsdr/ptcbs_1_12673_884536662.arc
+ORA-00280: change 117227510 for thread 1 is in sequence #12673
+
+
+Specify log: {<RET>=suggested | filename | AUTO | CANCEL}
+ORA-00308: cannot open archived log
+'/archive/ptcbsdr/ptcbs_1_12673_884536662.arc'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 3
+
+
+ORA-00308: cannot open archived log
+'/archive/ptcbsdr/ptcbs_1_12673_884536662.arc'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 3
+
+
+SQL> SQL>   2    3  
+Archive Applied
+--------------------------------------------------------------------
+Archive Applied from node1: 12672
+Archive Applied from node2: 15742
+
+SQL> SQL> 
+Finished DATE and T
+-------------------
+06-27-2016 16:50:03
+
+SQL> SQL> Disconnected from Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+\n
+\n
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+SQL*Plus: Release 11.2.0.4.0 Production on Mon Jun 27 16:55:01 2016
+
+Copyright (c) 1982, 2013, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+
+SQL> SQL> SQL> SQL> 
+APPLY DATE and TIME
+-------------------
+06-27-2016 16:55:01
+
+SQL> SQL> 
+NAME	  OPEN_MODE	       DATABASE_ROLE
+--------- -------------------- ----------------
+PTCBS	  MOUNTED	       PHYSICAL STANDBY
+
+SQL> SQL>   2    3  
+Archive Applied
+--------------------------------------------------------------------
+Archive Applied from node1: 12672
+Archive Applied from node2: 15742
+
+SQL> SQL> ORA-00279: change 117227510 generated at 06/27/2016 15:20:32 needed for thread
+1
+ORA-00289: suggestion : /archive/ptcbsdr/ptcbs_1_12673_884536662.arc
+ORA-00280: change 117227510 for thread 1 is in sequence #12673
+
+
+Specify log: {<RET>=suggested | filename | AUTO | CANCEL}
+ORA-00308: cannot open archived log
+'/archive/ptcbsdr/ptcbs_1_12673_884536662.arc'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 3
+
+
+ORA-00308: cannot open archived log
+'/archive/ptcbsdr/ptcbs_1_12673_884536662.arc'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 3
+
+
+SQL> SQL>   2    3  
+Archive Applied
+--------------------------------------------------------------------
+Archive Applied from node1: 12672
+Archive Applied from node2: 15742
+
+SQL> SQL> 
+Finished DATE and T
+-------------------
+06-27-2016 16:55:03
+
+SQL> SQL> Disconnected from Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+\n
+\n
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+SQL*Plus: Release 11.2.0.4.0 Production on Mon Jun 27 17:00:01 2016
+
+Copyright (c) 1982, 2013, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+
+SQL> SQL> SQL> SQL> 
+APPLY DATE and TIME
+-------------------
+06-27-2016 17:00:01
+
+SQL> SQL> 
+NAME	  OPEN_MODE	       DATABASE_ROLE
+--------- -------------------- ----------------
+PTCBS	  MOUNTED	       PHYSICAL STANDBY
+
+SQL> SQL>   2    3  
+Archive Applied
+--------------------------------------------------------------------
+Archive Applied from node1: 12672
+Archive Applied from node2: 15742
+
+SQL> SQL> ORA-00279: change 117227510 generated at 06/27/2016 15:20:32 needed for thread
+1
+ORA-00289: suggestion : /archive/ptcbsdr/ptcbs_1_12673_884536662.arc
+ORA-00280: change 117227510 for thread 1 is in sequence #12673
+
+
+Specify log: {<RET>=suggested | filename | AUTO | CANCEL}
+ORA-00308: cannot open archived log
+'/archive/ptcbsdr/ptcbs_1_12673_884536662.arc'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 3
+
+
+ORA-00308: cannot open archived log
+'/archive/ptcbsdr/ptcbs_1_12673_884536662.arc'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 3
+
+
+SQL> SQL>   2    3  
+Archive Applied
+--------------------------------------------------------------------
+Archive Applied from node1: 12672
+Archive Applied from node2: 15742
+
+SQL> SQL> 
+Finished DATE and T
+-------------------
+06-27-2016 17:00:02
+
+SQL> SQL> Disconnected from Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+\n
+\n
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+SQL*Plus: Release 11.2.0.4.0 Production on Mon Jun 27 17:05:01 2016
+
+Copyright (c) 1982, 2013, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+
+SQL> SQL> SQL> SQL> 
+APPLY DATE and TIME
+-------------------
+06-27-2016 17:05:01
+
+SQL> SQL> 
+NAME	  OPEN_MODE	       DATABASE_ROLE
+--------- -------------------- ----------------
+PTCBS	  MOUNTED	       PHYSICAL STANDBY
+
+SQL> SQL>   2    3  
+Archive Applied
+--------------------------------------------------------------------
+Archive Applied from node1: 12672
+Archive Applied from node2: 15742
+
+SQL> SQL> ORA-00279: change 117227510 generated at 06/27/2016 15:20:32 needed for thread
+1
+ORA-00289: suggestion : /archive/ptcbsdr/ptcbs_1_12673_884536662.arc
+ORA-00280: change 117227510 for thread 1 is in sequence #12673
+
+
+Specify log: {<RET>=suggested | filename | AUTO | CANCEL}
+ORA-00308: cannot open archived log
+'/archive/ptcbsdr/ptcbs_1_12673_884536662.arc'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 3
+
+
+ORA-00308: cannot open archived log
+'/archive/ptcbsdr/ptcbs_1_12673_884536662.arc'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 3
+
+
+SQL> SQL>   2    3  
+Archive Applied
+--------------------------------------------------------------------
+Archive Applied from node1: 12672
+Archive Applied from node2: 15742
+
+SQL> SQL> 
+Finished DATE and T
+-------------------
+06-27-2016 17:05:03
+
+SQL> SQL> Disconnected from Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+\n
+\n
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+SQL*Plus: Release 11.2.0.4.0 Production on Mon Jun 27 17:10:01 2016
+
+Copyright (c) 1982, 2013, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+
+SQL> SQL> SQL> SQL> 
+APPLY DATE and TIME
+-------------------
+06-27-2016 17:10:01
+
+SQL> SQL> 
+NAME	  OPEN_MODE	       DATABASE_ROLE
+--------- -------------------- ----------------
+PTCBS	  MOUNTED	       PHYSICAL STANDBY
+
+SQL> SQL>   2    3  
+Archive Applied
+--------------------------------------------------------------------
+Archive Applied from node1: 12672
+Archive Applied from node2: 15742
+
+SQL> SQL> ORA-00279: change 117227510 generated at 06/27/2016 15:20:32 needed for thread
+1
+ORA-00289: suggestion : /archive/ptcbsdr/ptcbs_1_12673_884536662.arc
+ORA-00280: change 117227510 for thread 1 is in sequence #12673
+
+
+Specify log: {<RET>=suggested | filename | AUTO | CANCEL}
+ORA-00308: cannot open archived log
+'/archive/ptcbsdr/ptcbs_1_12673_884536662.arc'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 3
+
+
+ORA-00308: cannot open archived log
+'/archive/ptcbsdr/ptcbs_1_12673_884536662.arc'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 3
+
+
+SQL> SQL>   2    3  
+Archive Applied
+--------------------------------------------------------------------
+Archive Applied from node1: 12672
+Archive Applied from node2: 15742
+
+SQL> SQL> 
+Finished DATE and T
+-------------------
+06-27-2016 17:10:03
+
+SQL> SQL> Disconnected from Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+\n
+\n
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+SQL*Plus: Release 11.2.0.4.0 Production on Mon Jun 27 17:15:01 2016
+
+Copyright (c) 1982, 2013, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+
+SQL> SQL> SQL> SQL> 
+APPLY DATE and TIME
+-------------------
+06-27-2016 17:15:01
+
+SQL> SQL> 
+NAME	  OPEN_MODE	       DATABASE_ROLE
+--------- -------------------- ----------------
+PTCBS	  MOUNTED	       PHYSICAL STANDBY
+
+SQL> SQL>   2    3  
+Archive Applied
+--------------------------------------------------------------------
+Archive Applied from node1: 12672
+Archive Applied from node2: 15742
+
+SQL> SQL> ORA-00279: change 117227510 generated at 06/27/2016 15:20:32 needed for thread
+1
+ORA-00289: suggestion : /archive/ptcbsdr/ptcbs_1_12673_884536662.arc
+ORA-00280: change 117227510 for thread 1 is in sequence #12673
+
+
+Specify log: {<RET>=suggested | filename | AUTO | CANCEL}
+ORA-00308: cannot open archived log
+'/archive/ptcbsdr/ptcbs_1_12673_884536662.arc'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 3
+
+
+ORA-00308: cannot open archived log
+'/archive/ptcbsdr/ptcbs_1_12673_884536662.arc'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 3
+
+
+SQL> SQL>   2    3  
+Archive Applied
+--------------------------------------------------------------------
+Archive Applied from node1: 12672
+Archive Applied from node2: 15742
+
+SQL> SQL> 
+Finished DATE and T
+-------------------
+06-27-2016 17:15:03
+
+SQL> SQL> Disconnected from Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+\n

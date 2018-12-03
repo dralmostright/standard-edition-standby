@@ -1,0 +1,22 @@
+RUN {
+  SET NEWNAME FOR DATAFILE 1 TO '/oradata/prabhudr/system01.dbf';
+  SET NEWNAME FOR DATAFILE 2 TO '/oradata/prabhudr/sysaux01.dbf';
+  SET NEWNAME FOR DATAFILE 3 TO '/oradata/prabhudr/undotbs1_01.dbf';
+  SET NEWNAME FOR DATAFILE 4 TO '/oradata/prabhudr/users01.dbf';
+  SET NEWNAME FOR DATAFILE 5 TO '/oradata/prabhudr/example01.dbf';
+  SET NEWNAME FOR DATAFILE 6 TO '/oradata/prabhudr/undotbs2_01.dbf';
+   
+  SQL "ALTER DATABASE RENAME FILE ''+ORADATA/prabhudb/onlinelog/group_2.262.914539659''
+      TO ''/oradata/prabhudr/redo0201.log'' ";
+  SQL "ALTER DATABASE RENAME FILE ''+ORADATA/prabhudb/onlinelog/group_1.261.914539657''
+      TO ''/oradata/prabhudr/redo0101.log'' ";
+  SQL "ALTER DATABASE RENAME FILE ''+ORADATA/prabhudb/onlinelog/group_3.266.914540041''
+      TO ''/oradata/prabhudr/redo0301.log'' ";
+  SQL "ALTER DATABASE RENAME FILE ''+ORADATA/prabhudb/onlinelog/group_4.267.914540043''
+      TO ''/oradata/prabhudr/redo0401.log'' ";
+   
+  RESTORE DATABASE;
+  SWITCH DATAFILE ALL;
+   
+  RECOVER DATABASE;
+}

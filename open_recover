@@ -1,0 +1,49 @@
+#!/bin/bash
+#############################################################
+# Author : Suman Adhikari                                  ##
+# Company : Nepasoft Solution                              ##
+# Description : This script is developed for manual        ##
+#               Standby database configuration for         ##
+#               standard edition databases. It will        ##
+#               stop the recovery and start database in    ##
+#               readonly mode and again start recover when ##
+#               specified arguments are passed.            ##
+#############################################################
+
+#############################################################
+# Set the appropriate environmental variables               #
+#############################################################
+export ORACLE_HOSTNAME=`hostname`
+export ORACLE_UNQNAME=ptcbsdr
+export ORACLE_BASE=/u01/app/oracle
+export ORACLE_HOME=/u01/app/oracle/product/11.2.0/db_1
+export ORACLE_SID=ptcbs
+
+case "$1" in
+    'openreadonly')
+        #####################################################
+        # Stop the Recovery for standby database            #
+        # Open Database in Read only mode                   #
+        #####################################################
+        /archive/standbyscripts/open_readonly.sh
+        ;;
+    'startrecovery')
+        #####################################################
+        # Shutdown the database in normalmode               #
+        # Start the recovery Process                        #
+        #####################################################
+        /archive/standbyscripts/start_recovery.sh
+        ;;
+    'checkstatus')
+        #####################################################
+        # Check the applied archived form both nodes        #
+        #####################################################
+        /archive/standbyscripts/checkstatus.sh
+        ;;
+    'applyarchive')
+        #####################################################
+        # Apply the transfered archived logs                #
+        #####################################################
+        /archive/standbyscripts/recover.sh
+        ;;
+esac
