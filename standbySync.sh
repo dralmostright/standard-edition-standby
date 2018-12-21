@@ -126,7 +126,7 @@ FunResyncArch(){
 	
 	CheckVars ${RSYNC_LOG_DIR} ${RSYNC_SRC_DIR} ${RSYNC_DEST_DIR} ${RSYNC_REMOTEHOST} ${RSYNC_USER}
 	ReportInfo "Variables status verification passed..." "Y"
-	ReportInfo "\nArchivelog Synchronization Start Time :\n`date +%d/%m/%Y\ %H:%M:%S`" "Y"
+	ReportInfo "\nSource Dir : ${RSYNC_SRC_DIR}\nSource Host : `hostname`\nDestination Host : ${RSYNC_REMOTEHOST}\nDestination Dir : ${RSYNC_DEST_DIR}\nArchivelog Synchronization Start Time :\n`date +%d/%m/%Y\ %H:%M:%S`" "Y"
 	RSYNC_START_TIME=`date +%S`
 	rsync -e ssh -Pazv ${RSYNC_SRC_DIR} oracle@${RSYNC_REMOTEHOST}:${RSYNC_DEST_DIR} >> ${RSYNC_LOG_FILE}
 	RSYNC_END_TIME=`date +%S`
