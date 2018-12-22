@@ -123,15 +123,16 @@ CheckVars(){
 
 
 FunResyncArch(){
-	
+	#local totalSize
 	CheckVars ${RSYNC_LOG_DIR} ${RSYNC_SRC_DIR} ${RSYNC_DEST_DIR} ${RSYNC_REMOTEHOST} ${RSYNC_USER}
 	ReportInfo "Variables status verification passed..." "Y"
 	ReportInfo "\nSource Dir : ${RSYNC_SRC_DIR}\nSource Host : `hostname`\nDestination Host : ${RSYNC_REMOTEHOST}\nDestination Dir : ${RSYNC_DEST_DIR}\nArchivelog Synchronization Start Time :\n`date +%d/%m/%Y\ %H:%M:%S`" "Y"
-	RSYNC_START_TIME=`date +%S`
-	rsync -e ssh -Pazv ${RSYNC_SRC_DIR} oracle@${RSYNC_REMOTEHOST}:${RSYNC_DEST_DIR} >> ${RSYNC_LOG_FILE}
-	RSYNC_END_TIME=`date +%S`
+	RSYNC_START_TIME=`date +%s`
+	rsync -e ssh -Pazv --stats ${RSYNC_SRC_DIR} oracle@${RSYNC_REMOTEHOST}:${RSYNC_DEST_DIR} >> ${RSYNC_LOG_FILE}
+	RSYNC_END_TIME=`date +%s`
 	ReportInfo "\nArchivelog Synchronization Finish Time :\n`date +%d/%m/%Y\ %H:%M:%S`" "Y"
 	TOTAL_TIME=`expr ${RSYNC_END_TIME} - ${RSYNC_START_TIME}`
+	#totalSize=`tail -21 ${RSYNC_LOG_FILE} | head -1 | awk '{ print $5 }' | sed 's/,//g'`
 	TOTAL_TIME=`printf '%d Hour : %d Minutes : %d Seconds\n' $((${TOTAL_TIME}/3600)) $((${TOTAL_TIME}%3600/60)) $((${TOTAL_TIME}%60))`
 	ReportInfo "\nArchivelog Synchronization Total Time :\n${TOTAL_TIME}" "Y" 
 }
