@@ -19,8 +19,9 @@
 ## Set Oracle Specific Environmental env's
 ##
 export ORACLE_HOSTNAME=`hostname`
-export ORACLE_HOME=/u01/app/oracle/product/11.2.0/db_1
-export ORACLE_SID=""
+export ORACLE_HOME=/u02/app/oracle/product/11.2.0.4/db_1
+export ORACLE_SID="orcldr"
+DBMODE=""
 
 ##
 ## Current user executing the script
@@ -36,10 +37,11 @@ CURSCRIPT=`readlink -f $0`
 ##
 ## Variables for generating logfiles 
 ##
-export NS_STNADBY_BASE=/u01/app/oracle
-DATE_AND_TIME=`date +%d_%m_%Y`
-LOG_FILE_NAME=`dirname ${CURSCRIPT}`/Sessionrestore_${DATE_AND_TIME}.log
-
+RECOVERY_LOG_DIR="/archive/syncstandby/diag"
+RECOVERY_ARCH_DIR="/archive/orcldr/"
+RSYNC_LOG_FILE=${RECOVERY_LOG_DIR}/alertRECOVER_${ORACLE_SID}.log
+RSYNC_START_TIME=""
+RSYNC_END_TIME=""
 
 ##
 ## For Warning and Text manupulation
@@ -62,11 +64,22 @@ underline=$(tput smul)
 ###
 
 ReportError(){
-       echo "########################################################"
-       echo "Error during Running Script : $CURSCRIPT"
-       echo -e "$1: $2"
-       echo "########################################################"
-       exit 1;
+	if [ "${3}" != "" ]
+		then
+			echo "" >> ${RSYNC_LOG_FILE}
+			echo "########################################################" >> ${RSYNC_LOG_FILE}
+			echo -e "Error during Running Script :\n$CURSCRIPT" >> ${RSYNC_LOG_FILE}
+			echo -e "$1: $2" >> ${RSYNC_LOG_FILE}
+			echo "########################################################" >> ${RSYNC_LOG_FILE}
+			echo "" >> ${RSYNC_LOG_FILE}
+			exit 1;
+	else
+			echo "########################################################"
+			echo "Error during Running Script : $CURSCRIPT"
+			echo -e "$1: $2"
+			echo "########################################################"
+			exit 1;
+	fi
 }
 
 ###
@@ -76,10 +89,20 @@ ReportError(){
 ###
 
 ReportInfo(){
-       echo "########################################################"
-       echo "Information by the script : $CURSCRIPT"
-       echo -e "INFO : $1 "
-       echo "########################################################"
+	if [ "${2}" != "" ]
+		then
+			echo "" >> ${RSYNC_LOG_FILE}
+			echo "########################################################" >> ${RSYNC_LOG_FILE}
+			echo -e "Information by the script :\n$CURSCRIPT\n" >> ${RSYNC_LOG_FILE}
+			echo -e "INFO : $1 " >> ${RSYNC_LOG_FILE}
+			echo "########################################################" >> ${RSYNC_LOG_FILE}
+			echo "" >> ${RSYNC_LOG_FILE}
+	else 
+			echo "########################################################"
+			echo "Information by the script : $CURSCRIPT"
+			echo -e "INFO : $1 "
+			echo "########################################################"
+	fi
 }
 
 
@@ -90,29 +113,37 @@ ReportInfo(){
 CheckVars(){
 	if [ "${1}" = "" ]
 	then
-		ReportError "RERR-001" "${bell}${bold}${underline}ORACLE_HOME${reset} Environmental variable not Set. Aborting...."
+		ReportError "RERR-001" "${bell}${bold}${underline}ORACLE_HOME${reset} Env variable not Set. Aborting...." "Y"
 		
 	elif [ ! -d ${1} ]
 	then
-		ReportError "RERR-002" "Directory \"${bell}${bold}${underline}${1}${reset}\" not found or ORACLE_HOME Env invalid. Aborting...."
+		ReportError "RERR-002" "Directory \"${bell}${bold}${underline}${1}${reset}\" not found or ORACLE_HOME Env invalid. Aborting...." "Y"
 	
 	elif [ ! -x ${1}/bin/sqlplus ]
-		then
-			ReportError  "RERR-003" "Executable \"${bell}${bold}${underline}${1}/bin/sqlplus${reset}\" not found; Aborting..."
+	then
+		ReportError  "RERR-003" "Executable \"${bell}${bold}${underline}${1}/bin/sqlplus${reset}\" not found; Aborting..." "Y"
        
-	elif [ "${2}" != "oracle" ]
+	elif [ "${2}" = "" ]
         then
-                ReportError  "RERR-004" "User "${bell}${bold}${underline}${2}${reset}" not valid for running script; Aborting..."
+                ReportError  "RERR-004" "${bell}${bold}${underline}ORACLE_SID${reset} Env variable not Set. Aborting..." "Y"
+
+	elif [ "${3}" != "oracle" ]
+        then
+                ReportError  "RERR-004" "User "${bell}${bold}${underline}${2}${reset}" not valid for running script; Aborting..." "Y"
+	
+        elif [ "${4}" = "" ]
+        then
+                ReportError "RERR-001" "${bell}${bold}${underline}RECOVERY_ARCH_DIR${reset} Env variable not Set. Aborting...." "Y"
+
+        elif [ ! -d ${4} ]
+        then
+                ReportError "RERR-002" "Directory \"${bell}${bold}${underline}${4}${reset}\" not found or RECOVERY_ARCH_DIR Env invalid. Aborting...." "Y"
+
 	else
 		return 0;
 	fi
 }
 
-
-
-##
-## Function to check if any specific value exists in array
-##
 
 checkSidValid(){
 	param1=("${!1}")
@@ -131,65 +162,131 @@ checkSidValid(){
     return $statusSID;
 }
 
-
 ###
 ### Get Oracle SID env 
 ###
 FunGetOracleSID(){
 myarr=($(ps -ef | grep ora_smon| grep -v grep | awk -F' ' '{print $NF}' | cut -c 10-))
-echo "--------> List of Oracle Database Instance running on box: ${bold}${underline}`hostname`${reset}"
-
-for i in "${myarr[@]}"
-	do :
-	echo "-----------> Oracle Database Instance: "${bold}${underline}$i${reset} 
-	done
-}
-
-myarr=($(ps -ef | grep ora_smon | awk -F' ' '{print $NF}' | cut -c 10-))
-#myarr=($(ps -ef |grep smon | awk -F'_' '{print $3}'))
-echo "--------> List of Oracle Database Instance running on box: ${bold}${underline}`hostname`${reset}"
-
-for i in "${myarr[@]}"
-	do :
-	echo "-----------> Oracle Database Instance: "${bold}${underline}$i${reset} 
-	done
-
-if [[ "${ORA_INSTANCE}" = "" ]]
-then
-printf  'Enter the database instance for which Health Check should be Performed : '
-read -r ORA_INSTANCE
-export ORACLE_SID=`echo $ORA_INSTANCE`
+checkSidValid myarr[@] ${ORACLE_SID}
+if [ $? -eq 0 ]
+	then
+		ReportError  "\nRERR-005" "ORACLE_SID : ${bell}${bold}${underline}${ORACLE_SID}${reset} Env is invalid, no instance is running. Aborting..." "Y"
 fi
 
-##
-## Get the environment variables for the respective instance
-## Get the ORACLE sid
-export ORACLE_SID=`echo $ORA_INSTANCE`
+ReportInfo "\nChecking for validness for ORACLE_SID: ${bell}${bold}${underline}${ORACLE_SID}${reset} passed....." "Y"
+}
+
+###
+### Get the Database open mode...
+###
+FunGetDBmode(){
+DBMODE=$($1/bin/sqlplus -s /nolog <<END
+set pagesize 0 feedback off verify off echo off;
+connect / as sysdba
+select open_mode from v\$database;
+END
+)
+}
+
+###
+### Shutdown the instance
+###
+FunShutdownDB(){
+case ${2} in
+    I|i )
+	ReportInfo "${3}" "Y"
+        $1/bin/sqlplus -s /nolog <<EOF >> ${RSYNC_LOG_FILE}
+        set pagesize 0 feedback off verify off echo off;
+        connect / as sysdba
+        shutdown immediate;
+EOF
+        ;;
+
+        A|a )
+	ReportInfo "${3}" "Y"
+        $1/bin/sqlplus -s /nolog <<EOF
+        set pagesize 0 feedback off verify off echo off;
+        connect / as sysdba
+        shutdown abort;
+EOF
+        ;;
+
+    * )
+        ReportInfo "${3}" "Y"
+    ;;
+esac
+
+}
+
+###
+### Start the database
+###
+FunStartDB(){
+case ${2} in
+    n|N )
+	ReportInfo "${3}" "Y"
+        $1/bin/sqlplus -s /nolog <<EOF >> ${RSYNC_LOG_FILE} 
+        set pagesize 0 feedback off verify off echo off;
+        connect / as sysdba
+        startup nomount;
+EOF
+        ;;
+
+        m|M )
+	ReportInfo "${3}" "Y"
+        $1/bin/sqlplus -s /nolog <<EOF >> ${RSYNC_LOG_FILE}
+        set pagesize 0 feedback off verify off echo off;
+        connect / as sysdba
+        startup mount;
+EOF
+        ;;
+
+	o|O )
+	ReportInfo "${3}" "Y"
+        $1/bin/sqlplus -s /nolog <<EOF >> ${RSYNC_LOG_FILE}
+        set pagesize 0 feedback off verify off echo off;
+        connect / as sysdba
+        startup;
+EOF
+        ;;
+
+        r|R )
+	ReportInfo "${3}" "Y" 
+        $1/bin/sqlplus /nolog <<EOF >> ${RSYNC_LOG_FILE}
+        set pagesize 0 verify off echo off;
+        connect / as sysdba
+        startup mount;
+	alter database open read only;
+	select name, open_mode, database_role from v\$database;
+EOF
+        ;;
 
 
-##
-## Get the date and time for name of the folders
-##
-export DATE_TIME=`date +%d_%m_%Y`
-#export FILE_NAME=$destdir"/DBarchitecture_"$ORA_INSTANCE"_DBHC_"$DATE_TIME".log"
-export FILE_NAME=$destdir"/DBarchitecture_"$ORA_INSTANCE"_DBHC_"$DATE_TIME".html"
+    * )
+        ReportInfo "Startup of instance skipped......."
+    ;;
+esac
 
-
-
+}
 
 ###
 ### Function to enable disable scheduling
 ###
 FunHandleSchedule(){
-    if [ ${1} = 'N' ]
+    if [ ${1} = 'D' ]
         then
-			ReportInfo "Disabling Schedule job for recovery ........."
-			crontab -l | sed '\!/archive/standbyscripts/recover.sh!d' | crontab
+			ReportInfo "Disabling Schedule job for recovery ........." "Y"
+			# Backing up crontab entries before any changes take palce
+			crontab -l > ${RECOVERY_LOG_DIR}/temp/crontab.tmp
+			# delete the corntab entries for specific ORACLE_SID
+			crontab -l | grep -v "startrecovery ${ORACLE_SID}" | grep -v grep | crontab
 			
 	elif [ ${1} = 'E' ]
 		then
-			crontab -l | awk '{print} END {print "*/15 * * * * /archive/standbyscripts/recover.sh"}' | crontab
-			ReportInfo "Enabling Schedule job for recovery ........."
+			ReportInfo "Enabling Schedule job for recovery ........." "Y"
+			#cat crontab.tmp | grep "startrecovery ${ORACLE_SID}" > crontab_${ORACLE_SID}.tmp
+			crontab -l | awk '{print} END {system("cat crontab.tmp | grep \"startrecovery ${ORACLE_SID}\"") }' | corntab
+			#crontab -l | awk '{print} END {print "*/15 * * * * /archive/standbyscripts/recover.sh"}' | crontab
 	
 	else
 			ReportError "NEP-001" ${bell}${bold}${underline}"Scheduling status cannot be determined."${reset}" Aborting...."
@@ -198,123 +295,73 @@ FunHandleSchedule(){
 
 
 ###
-### Function to open database on readonly mode
+### Function to apply archived logs
 ###
-FunOpenDbReadOnly(){
-$ORACLE_HOME/bin/sqlplus >> /dev/null <<EOF >> /archive/standbylogs/open_readonly.log 
-sys / as sysdba
-SELECT TO_CHAR (SYSDATE, 'MM-DD-YYYY HH24:MI:SS') "Stop DATE and TIME" FROM DUAL;
-select name, open_mode, database_role from v\$database;
-SELECT MAX(RECID) "Max Applied Log sequence" FROM V\$LOG_HISTORY;
-alter database open read only;
-select name, open_mode, database_role from v\$database;
-SELECT TO_CHAR (SYSDATE, 'MM-DD-YYYY HH24:MI:SS') "Opened DATE and TIME" FROM DUAL;
-exit;
-EOF
-}
-
-###
-### Function to retart recovery
-###
-FunRecoverDb(){
-$ORACLE_HOME/bin/sqlplus >> /dev/null <<EOF >> /archive/standbylogs/start_recovery.log
-sys / as sysdba
-SELECT TO_CHAR (SYSDATE, 'MM-DD-YYYY HH24:MI:SS') "Start DATE and TIME" FROM DUAL;
-select name, open_mode, database_role from v\$database;
-SELECT MAX(RECID) "Max Applied Log sequence" FROM V\$LOG_HISTORY;
-shutdown immediate;
-startup mount;
-select name, open_mode, database_role from v\$database;
-SELECT TO_CHAR (SYSDATE, 'MM-DD-YYYY HH24:MI:SS') "Recover DATE and TIME" FROM DUAL;
-exit;
-EOF
-}
-
-###
-### Function to check sync status
-###
-FunCheckSyncStatus(){
-
-}
-
-
-crontab -l | sed '\!/archive/standbyscripts/recover.sh!d' | crontab
-$ORACLE_HOME/bin/sqlplus >> /dev/null <<EOF >> /archive/standbylogs/open_readonly.log 
-sys / as sysdba
-SELECT TO_CHAR (SYSDATE, 'MM-DD-YYYY HH24:MI:SS') "Stop DATE and TIME" FROM DUAL;
-select name, open_mode, database_role from v\$database;
-SELECT MAX(RECID) "Max Applied Log sequence" FROM V\$LOG_HISTORY;
-alter database open read only;
-select name, open_mode, database_role from v\$database;
-SELECT TO_CHAR (SYSDATE, 'MM-DD-YYYY HH24:MI:SS') "Opened DATE and TIME" FROM DUAL;
-exit;
-EOF
-
-
-
-$ORACLE_HOME/bin/sqlplus >> /dev/null <<EOF >> /archive/standbylogs/start_recovery.log
-sys / as sysdba
-SELECT TO_CHAR (SYSDATE, 'MM-DD-YYYY HH24:MI:SS') "Start DATE and TIME" FROM DUAL;
-select name, open_mode, database_role from v\$database;
-SELECT MAX(RECID) "Max Applied Log sequence" FROM V\$LOG_HISTORY;
-shutdown immediate;
-startup mount;
-select name, open_mode, database_role from v\$database;
-SELECT TO_CHAR (SYSDATE, 'MM-DD-YYYY HH24:MI:SS') "Recover DATE and TIME" FROM DUAL;
-exit;
-EOF
-crontab -l | awk '{print} END {print "*/15 * * * * /archive/standbyscripts/recover.sh"}' | crontab 
-
-
-echo '####################################################'
-echo '################ Checking Status ###################'
-echo '####################################################'
-STATUS=`$ORACLE_HOME/bin/sqlplus -silent / as sysdba <<EOF
-@/archive/standbyscripts/sql_scripts/check_status.sql
-exit;
-EOF`
-
-echo "$STATUS"
-echo '####################################################'
-
-
-export ORACLE_HOSTNAME=`hostname`
-export ORACLE_UNQNAME=ptcbsdr
-export ORACLE_BASE=/u01/app/oracle
-export ORACLE_HOME=/u01/app/oracle/product/11.2.0/db_1
-export ORACLE_SID=ptcbs
-echo "\n" >> /archive/standbylogs/recovery_log_file.log
-echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" >> /archive/standbylogs/recovery_log_file.log
-echo "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<" >> /archive/standbylogs/recovery_log_file.log
-
-$ORACLE_HOME/bin/sqlplus / as sysdba >> /dev/null <<EOF >> /archive/standbylogs/recovery_log_file.log
-
---#sys / as sysdba
-
+FunApplyArchivelogs(){
+ReportInfo "${2}" "Y"
+${1}/bin/sqlplus / as sysdba >> /dev/null <<EOF >> ${RSYNC_LOG_FILE}
+col "APPLY DATE and TIME" format a30
+col "Finished DATE and TIME" format a30
 SELECT TO_CHAR (SYSDATE, 'MM-DD-YYYY HH24:MI:SS') "APPLY DATE and TIME" FROM DUAL;
-
 select name, open_mode, database_role from v\$database;
-
-select 'Archive Applied from node1: '||max(SEQUENCE#) "Archive Applied" from gv\$log_history where thread#=1
-union all
-select 'Archive Applied from node2: '||max(SEQUENCE#) "Archive Applied" from gv\$log_history where thread#=2;
-
+select 'Last Archive Sequence Applied : '||max(SEQUENCE#) "Archive Applied" from v\$log_history where thread#=1;
 recover standby database
 AUTO
-
-select 'Archive Applied from node1: '||max(SEQUENCE#) "Archive Applied" from gv\$log_history where thread#=1
-union all
-select 'Archive Applied from node2: '||max(SEQUENCE#) "Archive Applied"from gv\$log_history where thread#=2;
-
+select 'Last Archive Sequence Applied : '||max(SEQUENCE#) "Archive Applied" from v\$log_history where thread#=1;
 SELECT TO_CHAR (SYSDATE, 'MM-DD-YYYY HH24:MI:SS') "Finished DATE and TIME" FROM DUAL;
-
 exit;
 EOF
-echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" >> /archive/standbylogs/recovery_log_file.log
-echo "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<" >> /archive/standbylogs/recovery_log_file.log
-echo "\n" >> /archive/standbylogs/recovery_log_file.log
+}
+
+###
+### Function to apply the archives
+###
+FunStartMediaRecovery(){
+FunGetDBmode ${ORACLE_HOME}
+
+	if [ "${DBMODE}" = "MOUNTED" ]
+	then
+		FunShutdownDB ${ORACLE_HOME} "no" "Database instance ${ORACLE_SID} found on mounted mode, no action required....."
+        else
+		FunShutdownDB ${ORACLE_HOME} "i" "Shutting down Database instance ${ORACLE_SID} ....."
+		FunStartDB ${ORACLE_HOME} "m" "Opening Database instance ${ORACLE_SID} in mounted mode ...."
+	fi
+	FunApplyArchivelogs ${ORACLE_HOME} "Applying Archive logs to Database instance ${ORACLE_SID} ....."
+}
 
 
+###
+### If ORACLE_SID is passed during running the script 
+### Give the priority to the passed variable
+###
+if [ "${2}" = "" ]
+	then
+	echo ""
+else
+	export ORACLE_SID=${2}
+fi
+
+###
+### If RECOVERY_ARCH_DIR is passed during running the script
+### Give the priority to the passed variable
+###
+if [ "${3}" = "" ]
+        then
+        echo ""
+else
+        export RECOVERY_ARCH_DIR=${3}
+fi
+
+
+###
+### Function to handle the Standby Database conf
+###
+
+
+CheckVars ${ORACLE_HOME} ${ORACLE_SID} ${RESTORE_USER} ${RECOVERY_ARCH_DIR}
+ReportInfo "\nChecking fundamental variables passed....." "Y"
+FunGetOracleSID
+#FunStartMediaRecovery
 
 case "$1" in
     'openreadonly')
@@ -322,15 +369,17 @@ case "$1" in
         # Stop the Recovery for standby database            #
         # Open Database in Read only mode                   #
         #####################################################
-        /archive/standbyscripts/open_readonly.sh
-        ;;
+	FunHandleSchedule "D"
+        FunShutdownDB ${ORACLE_HOME} "i" "Shutting down Database instance ${ORACLE_SID} to open in read only mode ....."
+	FunStartDB ${ORACLE_HOME} "R" "Opening database instance ${ORACLE_SID} in read only mode ....."
+	;;
     'startrecovery')
         #####################################################
         # Shutdown the database in normalmode               #
         # Start the recovery Process                        #
         #####################################################
-        /archive/standbyscripts/start_recovery.sh
-        ;;
+        FunStartMediaRecovery
+	;;
     'checkstatus')
         #####################################################
         # Check the applied archived form both nodes        #
@@ -343,5 +392,12 @@ case "$1" in
         #####################################################
         /archive/standbyscripts/recover.sh
         ;;
-esac
+    * )
+        #####################################################
+        # Shutdown the database in normalmode               #
+        # Start the recovery Process                        #
+        #####################################################
+        FunStartMediaRecovery
+        ;;
 
+esac

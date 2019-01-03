@@ -8,5 +8,9 @@ This projects lists the scripts for how to create a duplicate(clone) database of
   ++   Keep the clone database in synchronized state with primary by applying change records(archivelogs) from primary. 
   ++   Open the database in read only mode for reporting purpose after first stopping the apply process. 
 
+## Schedule Media recovery job
+*/10 * * * * /archive/syncstandby/scripts/standard-edition-standby/standbyRecover.sh startrecovery orcldr
+
+
 #### Reference
 Oracle Support : Alternative for standby database in standard edition (Doc ID 333749.1)
