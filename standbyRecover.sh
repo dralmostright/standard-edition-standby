@@ -270,6 +270,19 @@ esac
 }
 
 ###
+### Function to very the schedule
+###
+FunVerifySchedule(){
+count=`crontab -l | grep "${1}" | grep -v grep | wc -l`
+   if [ ${count} = '1' ]
+	then
+	return 0;
+   else
+	return 1;
+   fi
+}
+
+###
 ### Function to enable disable scheduling
 ###
 FunHandleSchedule(){
@@ -277,15 +290,16 @@ FunHandleSchedule(){
         then
 			ReportInfo "Disabling Schedule job for recovery ........." "Y"
 			# Backing up crontab entries before any changes take palce
-			crontab -l > ${RECOVERY_LOG_DIR}/temp/crontab.tmp
+			crontab -l | grep "startrecovery ${ORACLE_SID}" | grep -v grep > ${RECOVERY_LOG_DIR}/temp/crontab${ORACLE_SID}.tmp
 			# delete the corntab entries for specific ORACLE_SID
 			crontab -l | grep -v "startrecovery ${ORACLE_SID}" | grep -v grep | crontab
 			
 	elif [ ${1} = 'E' ]
 		then
 			ReportInfo "Enabling Schedule job for recovery ........." "Y"
-			#cat crontab.tmp | grep "startrecovery ${ORACLE_SID}" > crontab_${ORACLE_SID}.tmp
-			crontab -l | awk '{print} END {system("cat crontab.tmp | grep \"startrecovery ${ORACLE_SID}\"") }' | corntab
+			crontab -l >> ${RECOVERY_LOG_DIR}/temp/crontab${ORACLE_SID}.tmp
+			cat ${RECOVERY_LOG_DIR}/temp/crontab${ORACLE_SID}.tmp | crontab
+			#crontab -l | awk '{print} END {system("cat ${RECOVERY_LOG_DIR/temp/crontab.tmp | grep \"startrecovery ${ORACLE_SID}\"") }' | crontab
 			#crontab -l | awk '{print} END {print "*/15 * * * * /archive/standbyscripts/recover.sh"}' | crontab
 	
 	else
@@ -369,6 +383,7 @@ case "$1" in
         # Stop the Recovery for standby database            #
         # Open Database in Read only mode                   #
         #####################################################
+	#ReportInfo "\nDisabling the scheduled Mediarecovery job....." "Y"
 	FunHandleSchedule "D"
         FunShutdownDB ${ORACLE_HOME} "i" "Shutting down Database instance ${ORACLE_SID} to open in read only mode ....."
 	FunStartDB ${ORACLE_HOME} "R" "Opening database instance ${ORACLE_SID} in read only mode ....."
@@ -379,6 +394,7 @@ case "$1" in
         # Start the recovery Process                        #
         #####################################################
         FunStartMediaRecovery
+	#FunHandleSchedule "E"
 	;;
     'checkstatus')
         #####################################################
@@ -386,12 +402,12 @@ case "$1" in
         #####################################################
         /archive/standbyscripts/checkstatus.sh
         ;;
-    'applyarchive')
+    'scheduleMR')
         #####################################################
-        # Apply the transfered archived logs                #
+        # Schedule the media recovery job                   #
         #####################################################
-        /archive/standbyscripts/recover.sh
-        ;;
+        FunHandleSchedule "E"
+	;;
     * )
         #####################################################
         # Shutdown the database in normalmode               #
