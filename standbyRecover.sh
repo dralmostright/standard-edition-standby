@@ -20,7 +20,7 @@
 ##
 export ORACLE_HOSTNAME=`hostname`
 export ORACLE_HOME=/u02/app/oracle/product/11.2.0.4/db_1
-export ORACLE_SID="orcldr"
+#export ORACLE_SID="orcldr"
 DBMODE=""
 
 ##
@@ -263,7 +263,7 @@ EOF
 
 
     * )
-        ReportInfo "Startup of instance skipped......."
+        ReportInfo "Startup of instance skipped......." "Y"
     ;;
 esac
 
@@ -303,7 +303,7 @@ FunHandleSchedule(){
 			#crontab -l | awk '{print} END {print "*/15 * * * * /archive/standbyscripts/recover.sh"}' | crontab
 	
 	else
-			ReportError "NEP-001" ${bell}${bold}${underline}"Scheduling status cannot be determined."${reset}" Aborting...."
+			ReportError "NEP-001" ${bell}${bold}${underline}"Scheduling status cannot be determined."${reset}" Aborting...." "Y"
 	fi
 }
 
@@ -343,6 +343,20 @@ FunGetDBmode ${ORACLE_HOME}
 	FunApplyArchivelogs ${ORACLE_HOME} "Applying Archive logs to Database instance ${ORACLE_SID} ....."
 }
 
+###
+### Function to check archive applied status
+###
+FunCheckApplyStatus(){
+ReportInfo "Checking Sequence for Applied Archive Logs" "N"
+${1}/bin/sqlplus -s / as sysdba <<EOF 
+col "Current DATE and TIME" format a30
+col "Finished DATE and TIME" format a30
+SELECT TO_CHAR (SYSDATE, 'MM-DD-YYYY HH24:MI:SS') "Current DATE and TIME" FROM DUAL;
+select name, open_mode, database_role from v\$database;
+select max(fhrba_Seq) "Last Applied Sequence#" from x\$kcvfh;
+exit;
+EOF
+}
 
 ###
 ### If ORACLE_SID is passed during running the script 
@@ -350,6 +364,7 @@ FunGetDBmode ${ORACLE_HOME}
 ###
 if [ "${2}" = "" ]
 	then
+	ReportError  "RERR-004" "${bell}${bold}${underline}ORACLE_SID${reset} Env variable not Set. Aborting..." "Y"
 	echo ""
 else
 	export ORACLE_SID=${2}
@@ -400,7 +415,7 @@ case "$1" in
         #####################################################
         # Check the applied archived form both nodes        #
         #####################################################
-        /archive/standbyscripts/checkstatus.sh
+	FunCheckApplyStatus ${ORACLE_HOME}
         ;;
     'scheduleMR')
         #####################################################
@@ -408,6 +423,12 @@ case "$1" in
         #####################################################
         FunHandleSchedule "E"
 	;;
+    'disableMR')
+        #####################################################
+        # Schedule the media recovery job                   #
+        #####################################################
+        FunHandleSchedule "D"
+        ;;
     * )
         #####################################################
         # Shutdown the database in normalmode               #
